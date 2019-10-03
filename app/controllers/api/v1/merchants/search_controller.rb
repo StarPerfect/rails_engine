@@ -2,7 +2,6 @@ class Api::V1::Merchants::SearchController < ApplicationController
 
   def find
     if params[:id]
-      # binding.pry
       merchant = Merchant.find_by(find_params)
     elsif params[:name]
       merchant = Merchant.find_by( 'lower(name) = ?' , params[:name].downcase )
