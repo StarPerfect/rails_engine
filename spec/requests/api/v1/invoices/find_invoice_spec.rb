@@ -25,7 +25,7 @@ describe 'Invoice Search API' do
     expect(response.body).to eq(expected.to_json)
   end
 
-  it 'find a single item_items based on customer id' do
+  it 'find a single invoice based on customer id' do
     customer = create(:customer)
     merchant = create(:merchant)
     invoice = create(:invoice, customer: customer, merchant: merchant)
@@ -49,7 +49,7 @@ describe 'Invoice Search API' do
     expect(response.body).to eq(expected.to_json)
   end
 
-  it 'find a single item_items based on merchant id' do
+  it 'find a single invoice based on merchant id' do
     customer = create(:customer)
     merchant = create(:merchant)
     invoice = create(:invoice, customer: customer, merchant: merchant)
@@ -73,7 +73,7 @@ describe 'Invoice Search API' do
     expect(response.body).to eq(expected.to_json)
   end
 
-  it 'can find a single item item based on status' do
+  it 'can find a single invoice based on status' do
     customer = create(:customer)
     merchant = create(:merchant)
     invoice = create(:invoice, customer: customer, merchant: merchant)
@@ -97,7 +97,7 @@ describe 'Invoice Search API' do
     expect(response.body).to eq(expected.to_json)
   end
 
-  it 'find a single item_items based on created timestamp' do
+  it 'find a single invoice based on created timestamp' do
     customer = create(:customer)
     merchant = create(:merchant)
     invoice = create(:invoice, customer: customer, merchant: merchant)
@@ -121,7 +121,7 @@ describe 'Invoice Search API' do
     expect(response.body).to eq(expected.to_json)
   end
 
-  it 'find a single item_items based on updated timestamp' do
+  it 'find a single invoice based on updated timestamp' do
     customer = create(:customer)
     merchant = create(:merchant)
     invoice = create(:invoice, customer: customer, merchant: merchant)
