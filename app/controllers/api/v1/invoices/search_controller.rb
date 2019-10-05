@@ -1,6 +1,20 @@
 class Api::V1::Invoices::SearchController < ApplicationController
   def find
-    render json: InvoiceSerializer.new(Invoice.find_by(find_params))
+    if params[:status]
+      invoice = Invoice.find_by( 'lower(status) = ?' , params[:status].downcase )
+    else
+      invoice = Invoice.find_by(find_params)
+    end
+    render json: InvoiceSerializer.new(invoice)
+  end
+
+  def find_all
+    if params[:status]
+      invoice = Invoice.where( 'lower(status) = ?' , params[:status].downcase )
+    else
+      invoice = Invoice.where(find_params)
+    end
+    render json: InvoiceSerializer.new(invoice)
   end
 
 private

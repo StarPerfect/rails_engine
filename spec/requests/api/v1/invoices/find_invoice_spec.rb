@@ -97,6 +97,30 @@ describe 'Invoice Search API' do
     expect(response.body).to eq(expected.to_json)
   end
 
+  it 'can find a single invoice based on status - case insensitive' do
+    customer = create(:customer)
+    merchant = create(:merchant)
+    invoice = create(:invoice, customer: customer, merchant: merchant)
+
+    get "/api/v1/invoices/find?status=MYSTRING"
+
+    expected = {
+                data: {
+                  id: "#{invoice.id}",
+                  type: "invoice",
+                  attributes: {
+                    id: invoice.id,
+                    customer_id: customer.id,
+                    merchant_id: merchant.id,
+                    status: "MyString",
+                    },
+                  }
+                }
+
+    expect(response).to be_successful
+    expect(response.body).to eq(expected.to_json)
+  end
+
   it 'find a single invoice based on created timestamp' do
     customer = create(:customer)
     merchant = create(:merchant)
