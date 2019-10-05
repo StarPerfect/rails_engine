@@ -3,21 +3,27 @@ Rails.application.routes.draw do
     namespace :v1 do
       namespace :transactions do
         get 'find', to: 'search#find'
+        get 'find_all', to: 'search#find_all'
       end
       namespace :invoice_items do
         get 'find', to: 'search#find'
+        get 'find_all', to: 'search#find_all'
       end
       namespace :invoices do
         get 'find', to: 'search#find'
+        get 'find_all', to: 'search#find_all'
       end
       namespace :customers do
         get 'find', to: 'search#find'
+        get 'find_all', to: 'search#find_all'
       end
       namespace :items do
         get 'find', to: 'search#find'
+        get 'find_all', to: 'search#find_all'
       end
       namespace :merchants do
         get 'find', to: 'search#find'
+        get 'find_all', to: 'search#find_all'
       end
     end
   end

@@ -14,6 +14,15 @@ class Api::V1::Merchants::SearchController < ApplicationController
     # DRY up with: render json: MerchantSerializer.new(Merchant.find_by(find_params))
   end
 
+  def find_all
+    if params[:name]
+      merchant = Merchant.where( 'lower(name) = ?' , params[:name].downcase )
+    else
+      merchant = Merchant.where(find_params)
+    end
+    render json: MerchantSerializer.new(merchant)
+  end
+
 private
   def find_params
     params.permit(:name, :id, :created_at, :updated_at)
