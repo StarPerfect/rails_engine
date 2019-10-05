@@ -22,7 +22,7 @@ describe 'Customers Search API' do
     expect(response.body).to eq(expected.to_json)
   end
 
-  it 'find a single customers based on name' do
+  it 'find a single customers based on first name' do
     customer = create(:customer, first_name: 'Second')
 
     get "/api/v1/customers/find?first_name=#{customer.first_name}"
@@ -43,7 +43,7 @@ describe 'Customers Search API' do
     expect(response.body).to eq(expected.to_json)
   end
 
-  it 'find a single customers based on name case independent' do
+  it 'find a single customers based on first name case independent' do
     customer = create(:customer, first_name: 'Third')
 
     get "/api/v1/customers/find?last_name=#{customer.last_name.downcase}"
@@ -56,6 +56,48 @@ describe 'Customers Search API' do
                     id: customer.id,
                     first_name: "Third",
                     last_name: "MyString",
+                    },
+                  }
+                }
+
+    expect(response).to be_successful
+    expect(response.body).to eq(expected.to_json)
+  end
+
+  it 'find a single customers based on last name' do
+    customer = create(:customer, last_name: 'Last')
+
+    get "/api/v1/customers/find?last_name=#{customer.last_name}"
+
+    expected = {
+                data: {
+                  id: "#{customer.id}",
+                  type: "customer",
+                  attributes: {
+                    id: customer.id,
+                    first_name: "MyString",
+                    last_name: "Last",
+                    },
+                  }
+                }
+
+    expect(response).to be_successful
+    expect(response.body).to eq(expected.to_json)
+  end
+
+  it 'find a single customers based on last name case independent' do
+    customer = create(:customer, last_name: 'Last')
+
+    get "/api/v1/customers/find?last_name=LAST"
+
+    expected = {
+                data: {
+                  id: "#{customer.id}",
+                  type: "customer",
+                  attributes: {
+                    id: customer.id,
+                    first_name: "MyString",
+                    last_name: "Last",
                     },
                   }
                 }
