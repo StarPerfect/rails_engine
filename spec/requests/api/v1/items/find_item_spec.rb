@@ -192,4 +192,28 @@ describe 'Items Search API' do
     expect(response).to be_successful
     expect(response.body).to eq(expected.to_json)
   end
+
+  it 'can find a single item based on merchant id' do
+    merchant = create(:merchant)
+    item = create(:item, name: 'NinthItem', merchant: merchant)
+
+    get "/api/v1/items/find?merchant_id=#{merchant.id}"
+
+    expected = {
+                  data: {
+                    id: "#{item.id}",
+                    type: "item",
+                    attributes: {
+                      id: item.id,
+                      name: "NinthItem",
+                      description: "MyString",
+                      unit_price: 1,
+                      merchant_id: merchant.id,
+                    },
+                  }
+                }
+
+    expect(response).to be_successful
+    expect(response.body).to eq(expected.to_json)
+  end
 end
