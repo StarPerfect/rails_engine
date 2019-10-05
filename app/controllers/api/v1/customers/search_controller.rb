@@ -9,7 +9,6 @@ class Api::V1::Customers::SearchController < ApplicationController
       customer = Customer.find_by(find_params)
     end
     render json: CustomerSerializer.new(customer)
-    # DRY up with: render json: CustomerSerializer.new(Customer.find_by(find_params))
   end
 
   def find_all
