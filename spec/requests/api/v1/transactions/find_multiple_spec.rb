@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Transaction Search API' do
+describe 'Multiple Transaction Search API' do
   it 'can find all transactions by id' do
     invoice = create(:invoice)
     transaction = create(:transaction, invoice: invoice)

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Merchants Search API' do
+describe 'Multiple Merchants Search API' do
   it 'can find all merchants by id' do
     merchant = create(:merchant, name: 'First')
 
