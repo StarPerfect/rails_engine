@@ -34,21 +34,22 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :customers, only: [:index, :show]
 
+      resources :invoices, only: [:index, :show] do
+        resources :transactions, only: [:index], to: 'invoices/transactions#index'
+      end
+
       resources :merchants, only: [:index, :show] do
         resources :items, only: [:index], to: 'merchants/items#index'
         resources :invoices, only: [:index], to: 'merchants/invoices#index'
       end
+      
+     #  resources :invoices, only: [:index, :show] do
+     #   resources :transactions, module: 'invoices', only: [:index]
+     # end
 
-      resources :invoices, only: [:index, :show] do
-        resources :transactions, only: [:index], to: 'invoices/transactions#index'
-        resources :invoice_items, only: [:index], to: 'invoices/invoice_items#index'
-        resources :items, only: [:index], to: 'invoices/items#index'
-        resources :customer, only: [:show], to: 'invoices/customer#index'
-        resources :merchant, only: [:show], to: 'invoices/merchant#index'
-      end
       resources :items, only: [:index, :show]
       resources :transactions, only: [:index, :show]
       resources :invoice_items, only: [:index, :show]
+      end
     end
   end
-end
