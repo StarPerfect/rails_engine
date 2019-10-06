@@ -2,7 +2,6 @@ class Api::V1::Merchants::SearchController < ApplicationController
 
   def find
     if params[:id]
-      # binding.pry
       merchant = Merchant.find_by(find_params)
     elsif params[:name]
       merchant = Merchant.find_by( 'lower(name) = ?' , params[:name].downcase )
@@ -13,6 +12,15 @@ class Api::V1::Merchants::SearchController < ApplicationController
     end
     render json: MerchantSerializer.new(merchant)
     # DRY up with: render json: MerchantSerializer.new(Merchant.find_by(find_params))
+  end
+
+  def find_all
+    if params[:name]
+      merchant = Merchant.where( 'lower(name) = ?' , params[:name].downcase )
+    else
+      merchant = Merchant.where(find_params)
+    end
+    render json: MerchantSerializer.new(merchant)
   end
 
 private

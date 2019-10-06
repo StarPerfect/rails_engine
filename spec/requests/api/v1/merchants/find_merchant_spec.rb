@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Merchants Search API' do
+describe 'Merchant Search API' do
   it 'find a single merchants based on id' do
     merchant = create(:merchant, name: 'FirstTest')
 
@@ -11,6 +11,7 @@ describe 'Merchants Search API' do
                   "id": "#{merchant.id}",
                   "type": "merchant",
                   "attributes": {
+                    "id": merchant.id,
                     "name": "FirstTest"
                   }
                 }
@@ -30,6 +31,7 @@ describe 'Merchants Search API' do
                   "id": "#{merchant.id}",
                   "type": "merchant",
                   "attributes": {
+                    "id": merchant.id,
                     "name": "SecondTest"
                   }
                 }
@@ -49,6 +51,7 @@ describe 'Merchants Search API' do
                   "id": "#{merchant.id}",
                   "type": "merchant",
                   "attributes": {
+                    "id": merchant.id,
                     "name": "Queen Bee"
                   }
                 }
@@ -68,6 +71,7 @@ describe 'Merchants Search API' do
                   "id": "#{merchant.id}",
                   "type": "merchant",
                   "attributes": {
+                    "id": merchant.id,
                     "name": "FourthTest"
                   }
                 }
@@ -87,6 +91,7 @@ describe 'Merchants Search API' do
                   "id": "#{merchant.id}",
                   "type": "merchant",
                   "attributes": {
+                    "id": merchant.id,
                     "name": "FifthTest"
                   }
                 }
