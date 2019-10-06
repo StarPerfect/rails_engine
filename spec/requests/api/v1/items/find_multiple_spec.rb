@@ -15,7 +15,7 @@ describe 'Multiple Items Search API' do
                       id: item.id,
                       name: "First",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant.id,
                     },
                   }]
@@ -41,7 +41,7 @@ describe 'Multiple Items Search API' do
                       id: item_1.id,
                       name: "Second",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_1.id,
                     },
                   }, {
@@ -51,7 +51,7 @@ describe 'Multiple Items Search API' do
                       id: item_2.id,
                       name: "Second",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_2.id,
                     },
                   }]
@@ -77,7 +77,7 @@ describe 'Multiple Items Search API' do
                       id: item_1.id,
                       name: "ThIrD",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_1.id,
                     },
                   }, {
@@ -87,7 +87,7 @@ describe 'Multiple Items Search API' do
                       id: item_2.id,
                       name: "third",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_2.id,
                     },
                   }]
@@ -113,7 +113,7 @@ describe 'Multiple Items Search API' do
                       id: item_1.id,
                       name: "MyString",
                       description: "Fourth",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_1.id,
                     },
                   }, {
@@ -123,7 +123,7 @@ describe 'Multiple Items Search API' do
                       id: item_2.id,
                       name: "MyString",
                       description: "Fourth",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_2.id,
                     },
                   }]
@@ -149,7 +149,7 @@ describe 'Multiple Items Search API' do
                       id: item_1.id,
                       name: "MyString",
                       description: "FiFtH",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_1.id,
                     },
                   }, {
@@ -159,7 +159,7 @@ describe 'Multiple Items Search API' do
                       id: item_2.id,
                       name: "MyString",
                       description: "fifth",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_2.id,
                     },
                   }]
@@ -172,10 +172,10 @@ describe 'Multiple Items Search API' do
   it 'can find all items with the same unit price' do
     merchant_1 = create(:merchant)
     merchant_2 = create(:merchant)
-    item_1 = create(:item, unit_price: 1, merchant: merchant_1)
-    item_2 = create(:item, unit_price: 1, merchant: merchant_2)
+    item_1 = create(:item, unit_price: 2, merchant: merchant_1)
+    item_2 = create(:item, unit_price: 2, merchant: merchant_2)
 
-    get "/api/v1/items/find_all?unit_price=1"
+    get "/api/v1/items/find_all?unit_price=2"
 
     expected = {
                   data: [{
@@ -185,7 +185,7 @@ describe 'Multiple Items Search API' do
                       id: item_1.id,
                       name: "MyString",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_1.id,
                     },
                   }, {
@@ -195,7 +195,7 @@ describe 'Multiple Items Search API' do
                       id: item_2.id,
                       name: "MyString",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_2.id,
                     },
                   }]
@@ -220,7 +220,7 @@ describe 'Multiple Items Search API' do
                       id: item_1.id,
                       name: "MyString",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant.id,
                     },
                   }, {
@@ -230,7 +230,7 @@ describe 'Multiple Items Search API' do
                       id: item_2.id,
                       name: "MyString",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant.id,
                     },
                   }]
@@ -256,7 +256,7 @@ describe 'Multiple Items Search API' do
                       id: item_1.id,
                       name: "MyString",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_1.id,
                     },
                   }, {
@@ -266,7 +266,7 @@ describe 'Multiple Items Search API' do
                       id: item_2.id,
                       name: "MyString",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_2.id,
                     },
                   }]
@@ -292,7 +292,7 @@ describe 'Multiple Items Search API' do
                       id: item_1.id,
                       name: "MyString",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_1.id,
                     },
                   }, {
@@ -302,7 +302,7 @@ describe 'Multiple Items Search API' do
                       id: item_2.id,
                       name: "MyString",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant_2.id,
                     },
                   }]

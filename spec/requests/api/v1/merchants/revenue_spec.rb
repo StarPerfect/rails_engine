@@ -8,7 +8,7 @@ describe 'Revenue Business Intell Logic' do
     @customer_1 = create(:customer)
     @customer_2 = create(:customer)
     @customer_3 = create(:customer)
-    @item_1 = create(:item, unit_price: 1, merchant: @merchant_1)
+    @item_1 = create(:item, unit_price: 2, merchant: @merchant_1)
     @item_2 = create(:item, unit_price: 2, merchant: @merchant_2)
     @item_3 = create(:item, unit_price: 3, merchant: @merchant_3)
     @invoice_1 = create(:invoice, merchant: @merchant_1, customer: @customer_1)
