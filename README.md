@@ -1,24 +1,11 @@
-# README
+# Rails Engine!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+So to get my lovely project up and running on your system you need to:
 
-Things you may want to cover:
+* Clone down my repo onto your local machine
 
-* Ruby version
+* Ensure you're using Ruby version 2.4.1
 
-* System dependencies
+* Install Gems: faker, shoulda-matchers, rspec-rails, Fast JSON API, factory_bot_rails
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Rails version 5.2.3
