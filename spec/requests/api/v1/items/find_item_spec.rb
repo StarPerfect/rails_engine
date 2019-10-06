@@ -15,7 +15,7 @@ describe 'Items Search API' do
                       id: item.id,
                       name: "FirstItem",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant.id,
                     },
                   }
@@ -39,7 +39,7 @@ describe 'Items Search API' do
                       id: item.id,
                       name: "SecondItem",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant.id,
                     },
                   }
@@ -63,7 +63,7 @@ describe 'Items Search API' do
                       id: item.id,
                       name: "ThirdItem",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant.id,
                     },
                   }
@@ -87,7 +87,7 @@ describe 'Items Search API' do
                       id: item.id,
                       name: "FourthItem",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant.id,
                     },
                   }
@@ -111,7 +111,7 @@ describe 'Items Search API' do
                       id: item.id,
                       name: "FifthItem",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant.id,
                     },
                   }
@@ -135,7 +135,7 @@ describe 'Items Search API' do
                       id: item.id,
                       name: "SixthItem",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant.id,
                     },
                   }
@@ -159,7 +159,7 @@ describe 'Items Search API' do
                       id: item.id,
                       name: "SeventhItem",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant.id,
                     },
                   }
@@ -183,7 +183,7 @@ describe 'Items Search API' do
                       id: item.id,
                       name: "EigthItem",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant.id,
                     },
                   }
@@ -207,7 +207,7 @@ describe 'Items Search API' do
                       id: item.id,
                       name: "NinthItem",
                       description: "MyString",
-                      unit_price: 1,
+                      unit_price: 2,
                       merchant_id: merchant.id,
                     },
                   }

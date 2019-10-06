@@ -11,7 +11,6 @@ class Api::V1::Merchants::SearchController < ApplicationController
       merchant = Merchant.find_by(find_params)
     end
     render json: MerchantSerializer.new(merchant)
-    # DRY up with: render json: MerchantSerializer.new(Merchant.find_by(find_params))
   end
 
   def find_all
